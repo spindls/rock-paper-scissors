@@ -12,4 +12,14 @@ switch (randomNumber) {
 }
 }
 
-console.log (getComputerChoice())
+function getHumanChoice() {
+   const choice = prompt("please choose rock, paper, or scissors and input your choice.");
+    return "You selected" + " " + choice + ".";
+}
+
+let humanScore;
+let computerScore;
+
+
+
+console.log (getHumanChoice())
