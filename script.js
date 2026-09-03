@@ -17,21 +17,34 @@ function getHumanChoice() {
     return humanChoice.toLowerCase();
 }
 
-const humanScore = 0;
-const computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
+
+function playRound(humanChoice, computerChoice){
   if (humanChoice === computerChoice) {
-    return "It's a Tie!";
+    return "It's a Tie! Try Again.";
   }  else if (humanChoice === "scissors" && computerChoice === "paper") {
-    return "You Win! Scissors beats Paper."
+    humanScore = humanScore + 1;
+    return "You Win! Scissors beats Paper.";
   } else if (humanChoice === "paper" && computerChoice === "rock") {
+    humanScore = humanScore + 1;
     return "You Win! Paper beats Rock.";
   } else if (humanChoice === "rock" && computerChoice === "scissors") {
+    humanScore = humanScore + 1;
     return "You Win! Rock beats Scissors.";
   } else {
-    return "Computer Wins!";
+    computerScore = computerScore + 1;
+    return "You Lose! " + computerChoice + " beats " + humanChoice + ".";
   }
 
 }
 
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log (playRound(humanSelection, computerSelection));
+
+function playGame () {
+    
+}
