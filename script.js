@@ -21,6 +21,17 @@ const humanScore = 0;
 const computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
+  if (humanChoice === computerChoice) {
+    return "It's a Tie!";
+  }  else if (humanChoice === "scissors" && computerChoice === "paper") {
+    return "You Win! Scissors beats Paper."
+  } else if (humanChoice === "paper" && computerChoice === "rock") {
+    return "You Win! Paper beats Rock.";
+  } else if (humanChoice === "rock" && computerChoice === "scissors") {
+    return "You Win! Rock beats Scissors.";
+  } else {
+    return "Computer Wins!";
+  }
 
 }
 
