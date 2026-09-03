@@ -13,13 +13,14 @@ switch (randomNumber) {
 }
 
 function getHumanChoice() {
-   const choice = prompt("please choose rock, paper, or scissors and input your choice.");
-    return "You selected" + " " + choice + ".";
+    const humanChoice = prompt("please choose rock, paper, or scissors and input your choice.");
+    return humanChoice.toLowerCase();
 }
 
-let humanScore;
-let computerScore;
+const humanScore = 0;
+const computerScore = 0;
 
+function playRound(humanChoice, computerChoice) {
 
+}
 
-console.log (getHumanChoice())
