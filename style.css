@@ -5,6 +5,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 25px;
+    margin-top: 50px;
 
 }
 
@@ -41,4 +42,9 @@ h1 {
 p {
     text-align: center;
     max-width: 500px;
+}
+
+.losingMessage, .winningMessage {
+    display: block;
+    margin-top: 100px;
 }

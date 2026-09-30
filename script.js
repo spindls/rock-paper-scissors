@@ -84,20 +84,16 @@ replayButton.addEventListener("click", () => {
 
 function checkGameOver() {
 if (humanScore >= 5) {
-  buttonContainer.style.display = "none";
-  roundResults.style.display = "none";
-  scoreCard.style.display = "none";
-  const winningMessage = document.createElement("div");
+const winningMessage = document.createElement("div");
+  winningMessage.classList.add("winningMessage");
   winningMessage.textContent = "Congrats! You Won rock paper scissors against the computer.";
-  document.body.appendChild(winningMessage);
+  document.body.replaceChildren(winningMessage);
   document.body.appendChild(replayButton);
 } else if (computerScore >= 5) {
-  buttonContainer.style.display = "none";
-  roundResults.style.display = "none";
-  scoreCard.style.display = "none";
   const losingMessage = document.createElement("div");
+  losingMessage.classList.add("losingMessage");
   losingMessage.textContent = "Sorry! You Lost rock paper scissors against the computer.";
-  document.body.appendChild(losingMessage);
+  document.body.replaceChildren(losingMessage);
   document.body.appendChild(replayButton);
 }
 }
