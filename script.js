@@ -12,10 +12,10 @@ switch (randomNumber) {
 }
 }
 
-function getHumanChoice() {
-    const humanChoice = prompt("please choose rock, paper, or scissors and input your choice.");
-    return humanChoice.toLowerCase();
-}
+// function getHumanChoice() {
+//     const humanChoice = prompt("please choose rock, paper, or scissors and input your choice.");
+//     return humanChoice.toLowerCase();
+// }
 
 
 //function playGame() {
@@ -66,22 +66,30 @@ function getHumanChoice() {
   
 //    console.log (endGameMessage);
 //}
+const buttonContainer = document.createElement("div");
+buttonContainer.classList.add("buttonContainer")
+document.body.appendChild(buttonContainer);
 
 const rock = document.createElement("button");
+rock.classList.add("rockButton");
 const paper = document.createElement("button");
+paper.classList.add("paperButton");
 const scissors = document.createElement("button");
+scissors.classList.add("scissorsButton");
 rock.textContent = "rock";
 paper.textContent = "paper";
 scissors.textContent = "scissors";
-document.body.appendChild(rock);
-document.body.appendChild(paper);
-document.body.appendChild(scissors);
+buttonContainer.appendChild(rock);
+buttonContainer.appendChild(paper);
+buttonContainer.appendChild(scissors);
 
 rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
 paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
 scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
 const roundResults = document.createElement("div");
+roundResults.classList.add("roundResults");
 const scoreCard = document.createElement("div");
+scoreCard.classList.add("scoreCard");
 
 //playGame();
