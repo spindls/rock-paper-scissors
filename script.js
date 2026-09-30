@@ -25,29 +25,34 @@ function getHumanChoice() {
  
   function playRound(humanChoice, computerChoice){
     if (humanChoice === computerChoice) {
-      resultsDisplay.textContent = `It's a Tie! Try Again. Current Score
-       You: ${humanScore} | Computer: ${computerScore}`;
-      document.body.appendChild(resultsDisplay);
+      roundResults.textContent = "It's a Tie! Try Again."; 
+      scoreCard.textContent = `Current Score You: ${humanScore} | Computer: ${computerScore}`;
+      document.body.appendChild(roundResults);
+      document.body.appendChild(scoreCard);
     }  else if (humanChoice === "scissors" && computerChoice === "paper") {
       humanScore = humanScore + 1;
-      resultsDisplay.textContent = `You Win! scissors beats paper. Current Score
-       You: ${humanScore} | Computer: ${computerScore} `;
-      document.body.appendChild(resultsDisplay);
+      roundResults.textContent = "You Win! scissors beats paper.";
+      scoreCard.textContent = `Current Score You: ${humanScore} | Computer: ${computerScore} `;
+      document.body.appendChild(roundResults);
+      document.body.appendChild(scoreCard);
     } else if (humanChoice === "paper" && computerChoice === "rock") {
       humanScore = humanScore + 1;
-      resultsDisplay.textContent = `You Win! paper beats rock. Current Score
-       You: ${humanScore} | Computer: ${computerScore} `;
-      document.body.appendChild(resultsDisplay);
+      roundResults.textContent = "You Win! paper beats rock.";
+      scoreCard.textContent = `Current Score You: ${humanScore} | Computer: ${computerScore} `;
+      document.body.appendChild(roundResults);
+      document.body.appendChild(scoreCard);
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
       humanScore = humanScore + 1;
-      resultsDisplay.textContent = `You Win! rock beats scissors.
-       Current Score You: ${humanScore} | Computer: ${computerScore} `;
-      document.body.appendChild(resultsDisplay);
+      roundResults.textContent = "You Win! rock beats scissors.";
+      scoreCard.textContent = `Current Score You: ${humanScore} | Computer: ${computerScore} `;
+      document.body.appendChild(roundResults);
+      document.body.appendChild(scoreCard);
     } else {
       computerScore = computerScore + 1;
-      resultsDisplay.textContent = `You Lose! ${computerChoice} beats ${humanChoice} Current Score
-       You: ${humanScore} | Computer: ${computerScore} `;
-      document.body.appendChild(resultsDisplay);
+      roundResults.textContent = `You Lose! ${computerChoice} beats ${humanChoice} `;
+      scoreCard.textContent = `Current Score You: ${humanScore} | Computer: ${computerScore} `;
+      document.body.appendChild(roundResults);
+      document.body.appendChild(scoreCard);
 
     }
   
@@ -76,7 +81,7 @@ rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
 paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
 scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
-const resultsDisplay = document.createElement("div");
-
+const roundResults = document.createElement("div");
+const scoreCard = document.createElement("div");
 
 //playGame();
