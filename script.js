@@ -18,7 +18,7 @@ function getHumanChoice() {
 }
 
 
-function playGame() {
+//function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   
@@ -42,13 +42,26 @@ function playGame() {
   
   }
   
-  Array.from({ length: 5 }, () => playRound(getHumanChoice(), getComputerChoice()));
+ // Array.from({ length: 5 }, () => playRound(getHumanChoice(), getComputerChoice()));
 
-  let endGameMessage = humanScore > computerScore ? `Congrats! You Won rock paper scissors against the computer. \n Game summary \n -- You scored ${humanScore} points -- \n -- Computer scored ${computerScore} points --`
+  const endGameMessage = humanScore > computerScore ? `Congrats! You Won rock paper scissors against the computer. \n Game summary \n -- You scored ${humanScore} points -- \n -- Computer scored ${computerScore} points --`
       : computerScore > humanScore ? `Sorry! You Lost rock paper scissors against the computer. \n Game Summary \n -- You scored ${humanScore} points -- \n -- Computer scored ${computerScore} points --`
       : `Its a tie! out of 5 rounds \n Game summary \n -- You scored ${humanScore} points -- \n -- Computer scored ${computerScore} points --`;
   
     console.log (endGameMessage);
-}
+//}
 
-playGame();
+const rock = document.createElement("button");
+const paper = document.createElement("button");
+const scissors = document.createElement("button");
+rock.textContent = "rock";
+paper.textContent = "paper";
+scissors.textContent = "scissors";
+document.body.appendChild(rock);
+document.body.appendChild(paper);
+document.body.appendChild(scissors);
+
+
+
+
+//playGame();
