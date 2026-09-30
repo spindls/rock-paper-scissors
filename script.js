@@ -61,7 +61,9 @@ document.body.appendChild(rock);
 document.body.appendChild(paper);
 document.body.appendChild(scissors);
 
-
+rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
+paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
+scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
 
 //playGame();
