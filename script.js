@@ -12,13 +12,6 @@ switch (randomNumber) {
 }
 }
 
-// function getHumanChoice() {
-//     const humanChoice = prompt("please choose rock, paper, or scissors and input your choice.");
-//     return humanChoice.toLowerCase();
-// }
-
-
-//function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   
@@ -53,19 +46,11 @@ switch (randomNumber) {
       scoreCard.textContent = `Current Score You: ${humanScore} | Computer: ${computerScore} `;
       document.body.appendChild(roundResults);
       document.body.appendChild(scoreCard);
-
+    
     }
-  
+  checkGameOver();
   }
-  
- // Array.from({ length: 5 }, () => playRound(getHumanChoice(), getComputerChoice()));
 
-//  const endGameMessage = humanScore > computerScore ? `Congrats! You Won rock paper scissors against the computer. \n Game summary \n -- You scored ${humanScore} points -- \n -- Computer scored ${computerScore} points --`
-//      : computerScore > humanScore ? `Sorry! You Lost rock paper scissors against the computer. \n Game Summary \n -- You scored ${humanScore} points -- \n -- Computer scored ${computerScore} points --`
-//      : `Its a tie! out of 5 rounds \n Game summary \n -- You scored ${humanScore} points -- \n -- Computer scored ${computerScore} points --`;
-  
-//    console.log (endGameMessage);
-//}
 const buttonContainer = document.createElement("div");
 buttonContainer.classList.add("buttonContainer")
 document.body.appendChild(buttonContainer);
@@ -92,4 +77,25 @@ roundResults.classList.add("roundResults");
 const scoreCard = document.createElement("div");
 scoreCard.classList.add("scoreCard");
 
-//playGame();
+const refresh = document.createElement("div");
+refresh.textContent = "refresh this page to play again"
+
+function checkGameOver() {
+if (humanScore >= 5) {
+  buttonContainer.style.display = "none";
+  roundResults.style.display = "none";
+  scoreCard.style.display = "none";
+  const winningMessage = document.createElement("div");
+  winningMessage.textContent = "Congrats! You Won rock paper scissors against the computer.";
+  document.body.appendChild(winningMessage);
+  document.body.appendChild(refresh);
+} else if (computerScore >= 5) {
+  buttonContainer.style.display = "none";
+  roundResults.style.display = "none";
+  scoreCard.style.display = "none";
+  const losingMessage = document.createElement("div");
+  losingMessage.textContent = "Sorry! You Lost rock paper scissors against the computer.";
+  document.body.appendChild(losingMessage);
+  document.body.appendChild(refresh);
+}
+}
