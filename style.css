@@ -32,11 +32,3 @@ p {
     text-align: center;
     max-width: 500px;
 }
-
-.roundResults {
-    border: solid, 2px, darkslateblue;
-}
-
-.scoreCard {
-    border: solid, 2px, darkslateblue;
-}

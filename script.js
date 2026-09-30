@@ -73,9 +73,7 @@ paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
 scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
 
 const roundResults = document.createElement("div");
-roundResults.classList.add("roundResults");
 const scoreCard = document.createElement("div");
-scoreCard.classList.add("scoreCard");
 
 const refresh = document.createElement("div");
 refresh.textContent = "refresh this page to play again"
