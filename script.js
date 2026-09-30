@@ -56,11 +56,11 @@ buttonContainer.classList.add("buttonContainer")
 document.body.appendChild(buttonContainer);
 
 const rock = document.createElement("button");
-rock.classList.add("rockButton");
+rock.classList.add("choiceButton");
 const paper = document.createElement("button");
-paper.classList.add("paperButton");
+paper.classList.add("choiceButton");
 const scissors = document.createElement("button");
-scissors.classList.add("scissorsButton");
+scissors.classList.add("choiceButton");
 rock.textContent = "rock";
 paper.textContent = "paper";
 scissors.textContent = "scissors";
@@ -75,8 +75,12 @@ scissors.addEventListener("click", () => playRound("scissors", getComputerChoice
 const roundResults = document.createElement("div");
 const scoreCard = document.createElement("div");
 
-const refresh = document.createElement("div");
-refresh.textContent = "refresh this page to play again"
+const replayButton = document.createElement("button");
+replayButton.textContent = "click to play again";
+replayButton.classList.add("replayButton");
+replayButton.addEventListener("click", () => {
+  location.reload();
+});
 
 function checkGameOver() {
 if (humanScore >= 5) {
@@ -86,7 +90,7 @@ if (humanScore >= 5) {
   const winningMessage = document.createElement("div");
   winningMessage.textContent = "Congrats! You Won rock paper scissors against the computer.";
   document.body.appendChild(winningMessage);
-  document.body.appendChild(refresh);
+  document.body.appendChild(replayButton);
 } else if (computerScore >= 5) {
   buttonContainer.style.display = "none";
   roundResults.style.display = "none";
@@ -94,6 +98,6 @@ if (humanScore >= 5) {
   const losingMessage = document.createElement("div");
   losingMessage.textContent = "Sorry! You Lost rock paper scissors against the computer.";
   document.body.appendChild(losingMessage);
-  document.body.appendChild(refresh);
+  document.body.appendChild(replayButton);
 }
 }

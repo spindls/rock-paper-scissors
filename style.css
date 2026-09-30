@@ -8,7 +8,7 @@ body {
 
 }
 
-button {
+.choiceButton {
     width: 80px;
     height: 30px;
     background-color: darkslateblue;
@@ -17,6 +17,16 @@ button {
     color:white;
     font-weight: bold;
 
+}
+
+.replayButton {
+    width: 100px;
+    height: 50px;
+    background-color: darkslateblue;
+    border-radius: 5px;
+    border: solid, 2px, white;
+    color:white;
+    font-weight: bold;
 }
 
 .buttonContainer {
